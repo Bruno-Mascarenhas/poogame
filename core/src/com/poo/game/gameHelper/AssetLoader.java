@@ -5,6 +5,7 @@ package com.poo.game.gameHelper;
  */
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Preferences;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.Texture.TextureFilter;
@@ -19,6 +20,7 @@ public class AssetLoader {
         public static TextureRegion bg, grass;
         public static BitmapFont font, shadow;
         public static Preferences prefs;
+        public static Music music;
 
         public static Animation birdAnimation;
         public static TextureRegion bird, birdDown, birdUp;
@@ -30,6 +32,8 @@ public class AssetLoader {
             texture = new Texture(Gdx.files.internal("texture.png"));
             flap = Gdx.audio.newSound(Gdx.files.internal("flap.wav"));
             coin = Gdx.audio.newSound(Gdx.files.internal("coin.wav"));
+            music = Gdx.audio.newMusic(Gdx.files.internal("bgmcastle.mp3"));
+
             texture.setFilter(TextureFilter.Nearest, TextureFilter.Nearest);
 
             prefs = Gdx.app.getPreferences("FlappyZombie");
@@ -86,6 +90,7 @@ public class AssetLoader {
             coin.dispose();
             font.dispose();
             shadow.dispose();
+            music.dispose();
         }
 
     }

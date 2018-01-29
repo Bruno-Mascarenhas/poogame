@@ -1,6 +1,7 @@
 package com.poo.game.gameWorld;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.Game;
 import com.badlogic.gdx.graphics.OrthographicCamera;
@@ -37,6 +38,7 @@ public class GameRenderer {
     private Grass frontGrass, backGrass;
     private Pipe pipe1, pipe2, pipe3;
 
+    private Music music;
 
     private int midPointY, gameHeight;
 
@@ -138,7 +140,7 @@ public class GameRenderer {
         }
 
 
-            String score = world.getScore() + "";
+        String score = world.getScore() + "";
         AssetLoader.shadow.draw(batcher, "" + world.getScore(), (136 / 2) - (3 * score.length()), 12);
         AssetLoader.font.draw(batcher, "" + world.getScore(), (136 / 2) - (3 * score.length() - 1), 11);
 
@@ -157,6 +159,10 @@ public class GameRenderer {
         skullUp = AssetLoader.skullUp;
         skullDown = AssetLoader.skullDown;
         bar = AssetLoader.bar;
+        music = AssetLoader.music;
+        music.setLooping(true);
+        music.setVolume(0.7f);
+        music.play();
     }
 
     private void drawGrass() {
