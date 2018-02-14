@@ -161,7 +161,7 @@ public class GameRenderer {
         bar = AssetLoader.bar;
         music = AssetLoader.music;
         music.setLooping(true);
-        music.setVolume(0.7f);
+        music.setVolume(1f);
         music.play();
     }
 
