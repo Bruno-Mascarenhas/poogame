@@ -19,3 +19,4 @@ abstract class AbstractBird extends Game {
         super.dispose();
     }
 }
+ 
