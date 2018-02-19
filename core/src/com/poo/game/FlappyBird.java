@@ -9,11 +9,16 @@ import com.badlogic.gdx.Game;
 import com.poo.game.gameHelper.AssetLoader;
 import com.poo.game.screens.GameScreen;
 
-public class FlappyBird extends Game {
+import java.io.FileNotFoundException;
 
+class FlappyBird extends AbstractBird {
     @Override
     public void create(){
-        AssetLoader.load();
+        try {
+            AssetLoader.load();
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
         setScreen(new GameScreen());
     }
 
@@ -21,6 +26,4 @@ public class FlappyBird extends Game {
         super.dispose();
         AssetLoader.dispose();
     }
-
-
 }

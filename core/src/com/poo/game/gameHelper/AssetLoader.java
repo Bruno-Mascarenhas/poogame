@@ -13,6 +13,8 @@ import com.badlogic.gdx.graphics.g2d.Animation;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
 
+import java.io.FileNotFoundException;
+
 public class AssetLoader {
 
         public static Texture texture;
@@ -27,7 +29,7 @@ public class AssetLoader {
 
         public static TextureRegion skullUp, skullDown, bar;
 
-        public static void load() {
+        public static void load() throws FileNotFoundException {
             dead = Gdx.audio.newSound(Gdx.files.internal("dead.wav"));
             texture = new Texture(Gdx.files.internal("texture.png"));
             flap = Gdx.audio.newSound(Gdx.files.internal("flap.wav"));
