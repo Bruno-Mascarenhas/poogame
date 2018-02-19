@@ -7,7 +7,7 @@ import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.Game;
 import com.poo.game.gameHelper.AssetLoader;
-import com.poo.game.screens.GameScreen;
+import com.poo.game.screens.GameScreen; 
 
 import java.io.FileNotFoundException;
 
